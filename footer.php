@@ -18,14 +18,16 @@
 					</div>
 
 					<div class="col-sm-4 text-right">
-						<a href="#">
-							<img alt="Logo" src="img/logo-dark.png">
+						<a href="<?php echo esc_url( get_home_url() ); ?>">
+							<img class="logo" alt="WordPress Instant Articles" src="<?php echo get_template_directory_uri(); ?>/assets/img/wp-native-articles-logo.png">
 						</a>
 					</div>
 				</div>
 			</div>
 		</footer>
 	</div>
+
+	<?php wp_footer(); ?>
 
 </body>
 </html>

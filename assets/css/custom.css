@@ -1,1 +1,13 @@
 /*!---------- PLACE YOUR CUSTOM STYLES AND OVERRIDES HERE ----------*/
+
+nav .logo {
+	max-height: 72px;
+}
+
+.nav-1 .logo {
+	margin-top: 0px;
+}
+
+.footer-1 .logo {
+	max-height: 30px;
+}
