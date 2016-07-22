@@ -15,7 +15,7 @@ get_header(); ?>
 			<div class="row">
 				<div class="col-sm-12 text-center">
 					<h2 class="text-white"><b>WordPress</b> Native Articles</h2>
-					<h5 class="text-white">THE Premium WordPress Facebook Instant Articles Plugin</h5>
+					<h5 class="text-white">THE Premium WordPress Plugin for Facebook Instant Articles</h5>
 				</div>
 			</div>
 		</div>
@@ -36,7 +36,7 @@ get_header(); ?>
 					<i class="icon-laptop"></i>
 					<h5>API &amp; RSS Feed Options</h5>
 					<p>
-						Connect your WordPress site to your Facebook Instant Articles Page using either the RSS Feed or the API method for realtime time parsing.
+						Connect your WordPress site to your Facebook Instant Articles Page using either the RSS Feed or the API method for realtime time article syncing.
 					</p>
 				</div>
 
@@ -50,7 +50,7 @@ get_header(); ?>
 
 				<div class="col-sm-4 text-center feature">
 					<i class="icon-backpack-streamline-trekking"></i>
-					<h5>Designed for many uses</h5>
+					<h5>TODO</h5>
 					<p>
 
 					</p>
@@ -119,27 +119,27 @@ get_header(); ?>
 			<div class="row">
 				<div class="col-md-3 col-sm-6 text-center feature">
 					<i class="icon-browser-streamline-window"></i>
-					<h5>Default Article Settings</h5>
+					<h5>Global &amp; Article Settings</h5>
 				</div>
 
 				<div class="col-md-3 col-sm-6 text-center feature">
 					<i class="icon-arrow-streamline-target"></i>
-					<h5>TODO</h5>
+					<h5>Ad Enabled</h5>
 				</div>
 
 				<div class="col-md-3 col-sm-6 text-center feature">
 					<i class="icon-book-dowload-streamline"></i>
-					<h5>Thorough documentation</h5>
+					<h5>Thorough Documentation</h5>
 				</div>
 
 				<div class="col-md-3 col-sm-6 text-center feature">
 					<i class="icon-bubble-love-streamline-talk"></i>
-					<h5>TODO</h5>
+					<h5>Analytics</h5>
 				</div>
 
 				<div class="col-md-3 col-sm-6 text-center feature">
 					<i class="icon-design-pencil-rule-streamline"></i>
-					<h5>TODO</h5>
+					<h5>Sponsored Articles</h5>
 				</div>
 
 				<div class="col-md-3 col-sm-6 text-center feature">
@@ -232,7 +232,7 @@ get_header(); ?>
 		<div class="container">
 
 			<div class="row">
-				<div class="col-sm-12 text-center">
+				<div class="col-sm-12 text-center" style="margin-bottom: 30px;">
 					<h3>FAQs</h3>
 				</div>
 			</div>
