@@ -11,3 +11,31 @@ nav .logo {
 .footer-1 .logo {
 	max-height: 30px;
 }
+
+.content {
+	margin: 15px 0px;
+	padding: 15px 30px;
+	background: #fff;
+}
+
+.content h1 {
+	font-size: 38px;
+	margin-bottom: 15px;
+}
+
+
+input[type="email"], input[type="tel"] {
+    height: 54px;
+    line-height: 48px;
+    padding-left: 16px;
+    border: 1px solid #eee;
+    background: #fff;
+    border-radius: 3px;
+    font-size: 16px;
+    color: #888888;
+    font-weight: 400;
+}
+
+#edd_checkout_cart_form {
+	width: 100%;
+}

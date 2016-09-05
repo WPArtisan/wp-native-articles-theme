@@ -22,19 +22,22 @@ get_header(); ?>
 	</section>
 
 	<section class="features features-3">
+
+		<a name="features"></a>
+
 		<div class="container">
 
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1 col-sm-12 text-center">
 					<h3>PACKED full of features.</h3>
-					<p>With multiple options for all sections - Launchkit has the right stuff for your next landing page.</p>
+					<p>The most feature rich WordPress Instant Article Plugin - making it super easy to manage your Facebook articles.</p>
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="col-sm-4 text-center feature">
 					<i class="icon-laptop"></i>
-					<h5>API &amp; RSS Feed Options</h5>
+					<h5>API &amp; RSS Feed Methods</h5>
 					<p>
 						Connect your WordPress site to your Facebook Instant Articles Page using either the RSS Feed or the API method for realtime time article syncing.
 					</p>
@@ -50,9 +53,9 @@ get_header(); ?>
 
 				<div class="col-sm-4 text-center feature">
 					<i class="icon-backpack-streamline-trekking"></i>
-					<h5>TODO</h5>
+					<h5>Options Galore</h5>
 					<p>
-
+						Instant Articles has a lot of complex layout options, we've simplified them. You can set global defaults then override them on each article, should you wish.
 					</p>
 				</div>
 			</div>
@@ -101,7 +104,7 @@ get_header(); ?>
 				<div class="col-sm-6 col-md-5 col-md-offset-1 feature">
 					<h4>Readable Code.</h4>
 					<p>
-						All code is to WordPress standards, fully commented and contains as many filters and actions as we could possibly fit. The full developers documentation can be seen at <a href="http://developers.wp-native-articles.com">developers.wp-native-articles.com</a>.
+						Coded to WordPress standards, fully commented and contains as many filters and actions as we could possibly fit. The full developer documentation can be seen at <a href="http://developers.wp-native-articles.com">developers.wp-native-articles.com</a>.
 					</p>
 				</div>
 			</div>
@@ -129,7 +132,7 @@ get_header(); ?>
 
 				<div class="col-md-3 col-sm-6 text-center feature">
 					<i class="icon-book-dowload-streamline"></i>
-					<h5>Thorough Documentation</h5>
+					<h5>Full Documentation</h5>
 				</div>
 
 				<div class="col-md-3 col-sm-6 text-center feature">
@@ -162,6 +165,9 @@ get_header(); ?>
 	</section>
 
 	<section class="pricing pricing-1">
+
+		<a name="pricing"></a>
+
 		<div class="container">
 
 			<div class="row">
@@ -172,7 +178,7 @@ get_header(); ?>
 
 			<div class="row">
 
-				<a href="#">
+				<a href="<?php home_url(); ?>/checkout?edd_action=add_to_cart&download_id=48&edd_options[price_id]=1">
 					<div class="col-sm-4 text-center pricing-option">
 						<h6>Single Site</h6>
 						<div class="price-container">
@@ -184,12 +190,14 @@ get_header(); ?>
 						<ul>
 							<li>1 Year of updates and support</li>
 							<li>30 Day Money Back</li>
-
 						</ul>
+
+						<?php echo do_shortcode('[purchase_link id="12" text="Purchase" style="button" color="blue" price_id="1"]'); ?>
+
 					</div>
 				</a>
 
-				<a href="#">
+				<a href="<?php home_url(); ?>/checkout?edd_action=add_to_cart&download_id=48&edd_options[price_id]=2">
 					<div class="col-sm-4 text-center pricing-option active">
 						<h6>2 - 5 sites</h6>
 						<div class="price-container">
@@ -201,25 +209,29 @@ get_header(); ?>
 						<ul>
 							<li>1 Year of updates and support</li>
 							<li>30 Day Money Back</li>
-
 						</ul>
+
+						<?php echo do_shortcode('[purchase_link id="12" text="Purchase" style="button" color="blue" price_id="2"]'); ?>
+
 					</div>
 				</a>
 
-				<a href="#">
+				<a href="<?php home_url(); ?>/checkout?edd_action=add_to_cart&download_id=48&edd_options[price_id]=3">
 					<div class="col-sm-4 text-center pricing-option">
 						<h6>Unlimited sites</h6>
 						<div class="price-container">
 							<span class="dollar">$</span>
-							<span class="price">119</span>
+							<span class="price">129</span>
 							<span class="terms">/yr</span>
 						</div>
 
 						<ul>
 							<li>1 Year of updates and support</li>
 							<li>30 Day Money Back</li>
-
 						</ul>
+
+						<?php echo do_shortcode('[purchase_link id="12" text="Purchase" style="button" color="blue" price_id="3"]'); ?>
+
 					</div>
 				</a>
 			</div>
@@ -229,6 +241,9 @@ get_header(); ?>
 	</section>
 
 	<section class="faq faq-1">
+
+		<a name="faqs"></a> 
+
 		<div class="container">
 
 			<div class="row">
@@ -246,7 +261,7 @@ get_header(); ?>
 
 					<div class="faq">
 						<h5>Is it Multisite compatible?</h5>
-						<p>Yes. Multisite installs only require a single licence to get updates. There are also tools int he network panel for setting default site options and resetting options.</p>
+						<p>Yes. Multisite installs only require a single licence to get updates. There are also tools in the network panel for setting default site options and resetting options.</p>
 					</div>
 
 					<div class="faq">
@@ -275,7 +290,6 @@ get_header(); ?>
 
 			</div>
 
-
 		</div>
 	</section>
 
@@ -285,17 +299,30 @@ get_header(); ?>
 				<div class="col-sm-12 text-center">
 					<h3>Stay up-to-date</h3>
 					<h5>We send out occasional newsletters when we have exciting news to share.</h5>
-					<form class="contained-form form-email" data-success="Thanks for your submission, we will be in touch shortly." data-error="Please fill all fields correctly.">
+					<!-- Begin MailChimp Signup Form -->
+					<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+					<style type="text/css">
+						#mc_embed_signup { width: 800px; margin: 0 auto; }
+						#mc_embed_signup form { text-align: center; }
+						#mc_embed_signup input.email, #mc_embed_signup input.button { display: inline-block; }
+						#mc_embed_signup .clear { display: block; }
+					</style>
+					<div id="mc_embed_signup">
+						<form action="//wpartisan.us13.list-manage.com/subscribe/post?u=6d140baaa56a04a1d2f126872&amp;id=6047071390" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate contained-form form-email" target="_blank" novalidate>
+							<div id="mc_embed_signup_scroll">
 
-						<input type="text" name="name" class="signup-name-field validate-required" placeholder="Your Name">
-						<input type="text" name="email" class="validate-required validate-email signup-email-field" placeholder="Email Address">
-						<input type="submit" value="Subscribe »">
-						<p class="sub">
-							* We don’t share your personal info with anyone. Check out our <a href="https://wp-native-articles.com/privacy-policy"> Privacy Policy</a> for more information.
-						</p>
-						<iframe srcdoc="" class="mail-list-form">
-						</iframe>
-					</form>
+								<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+								<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+								<div style="position: absolute; left: -5000px;" aria-hidden="true">
+									<input type="text" name="b_6d140baaa56a04a1d2f126872_6047071390" tabindex="-1" value="">
+								</div>
+								<div class="clear">
+									<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+								</div>
+							</div>
+						</form>
+					</div>
+					<!--End mc_embed_signup-->
 				</div>
 			</div>
 		</div>
