@@ -64,3 +64,21 @@ input[type="email"], input[type="tel"] {
 .button--blue a {
 	color: #fff;
 }
+
+.edd_form input[type="text"],
+.edd_form input[type="email"],
+.edd_form input[type="password"],
+.edd_form select {
+	height: 36px;
+	line-height: 18px;
+	padding-left: 16px;
+	border: 1px solid #eee;
+	background: #fff;
+	border-radius: 3px;
+	font-size: 16px;
+	color: #888888;
+	width: 300px;
+	font-weight: 400;
+	margin-bottom: 12px;
+	padding: 6px 12px 6px 12px;
+}
