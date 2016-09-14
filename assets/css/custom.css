@@ -39,3 +39,28 @@ input[type="email"], input[type="tel"] {
 #edd_checkout_cart_form {
 	width: 100%;
 }
+
+.menu li {
+	padding: 6px 0px;
+}
+
+.menu li.button--blue {
+	padding: 6px 12px;
+	margin: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.428571429;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	color: #fff;
+	background: #3276b1;
+	border-color: #285e8e;
+}
+
+.button--blue a {
+	color: #fff;
+}
