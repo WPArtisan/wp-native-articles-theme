@@ -242,7 +242,7 @@ get_header(); ?>
 
 	<section class="faq faq-1">
 
-		<a name="faqs"></a> 
+		<a name="faqs"></a>
 
 		<div class="container">
 
@@ -281,7 +281,7 @@ get_header(); ?>
 
 					<div class="faq">
 						<h5>How do I get support?</h5>
-						<p>Full support is available at docs.wp-native-articles.com. Alternatively you can email support@wp-native-articles.com.</p>
+						<p>Full documentation, tutorials and knowledge base is available at docs.wp-native-articles.com. Alternatively you can contact us directly on your account page <a href="https://wp-native-articles.com/account/">here</a>.</p>
 					</div><div class="faq">
 						<h5>I have a pre-sales question</h5>
 						<p>We're happy to answer any pre-sales questions. Please get in touch by emailing support@wp-native-articles.com.</p>
