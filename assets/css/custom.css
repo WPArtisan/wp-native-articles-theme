@@ -97,3 +97,9 @@ input#rememberme {
 #edd_user_history {
 	margin-bottom: 30px;
 }
+
+#edd_user_history td, #edd_user_history th, #edd_sl_license_keys td, #edd_sl_license_keys th {
+	padding: 8px 10px;
+	font-size: 13px;
+	line-height: 16px;
+}
