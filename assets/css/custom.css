@@ -8,10 +8,6 @@ nav .logo {
 	margin-top: 0px;
 }
 
-.menu .current-menu-item {
-	border-bottom: 1px solid #237d9b;
-}
-
 .footer-1 .logo {
 	max-height: 30px;
 }
@@ -90,4 +86,10 @@ input[type="email"], input[type="tel"] {
 	font-weight: 400;
 	margin-bottom: 12px;
 	padding: 6px 12px 6px 12px;
+}
+
+input#rememberme {
+	-webkit-appearance: checkbox;
+	-moz-appearance:    checkbox;
+	appearance:         checkbox;
 }
