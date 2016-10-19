@@ -8,6 +8,10 @@ nav .logo {
 	margin-top: 0px;
 }
 
+.menu .current-menu-item {
+	border-bottom: 1px solid #237d9b;
+}
+
 .footer-1 .logo {
 	max-height: 30px;
 }
@@ -20,7 +24,12 @@ nav .logo {
 
 .content h1 {
 	font-size: 38px;
-	margin-bottom: 15px;
+	margin-bottom: 24px;
+	line-height: 46px;
+}
+
+.content h2, .content h3, .content h4, .content h5, .content h6 {
+	margin-bottom: 12px;
 }
 
 
