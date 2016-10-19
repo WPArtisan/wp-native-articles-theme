@@ -18,15 +18,41 @@ nav .logo {
 	background: #fff;
 }
 
+.content h2, .content h3, .content h4, .content h5, .content h6 {
+	margin-bottom: 12px;
+}
+
 .content h1 {
 	font-size: 38px;
 	margin-bottom: 24px;
 	line-height: 46px;
 }
 
-.content h2, .content h3, .content h4, .content h5, .content h6 {
-	margin-bottom: 12px;
+.content h2 {
+	font-size: 34px;
+	line-height: 42px;
 }
+
+.content h3 {
+	font-size: 30px;
+	line-height: 38px;
+}
+
+.content h4 {
+	font-size: 26px;
+	line-height: 34px;
+}
+
+.content h5 {
+	font-size: 22px;
+	line-height: 30px;
+}
+
+.content h6 {
+	font-size: 18px;
+	line-height: 26px;
+}
+
 
 
 input[type="email"], input[type="tel"] {
@@ -88,6 +114,10 @@ input[type="email"], input[type="tel"] {
 	padding: 6px 12px 6px 12px;
 }
 
+.edd-table {
+	margin-bottom: 30px;
+}
+
 input#rememberme {
 	-webkit-appearance: checkbox;
 	-moz-appearance:    checkbox;
@@ -98,7 +128,12 @@ input#rememberme {
 	margin-bottom: 30px;
 }
 
-#edd_user_history td, #edd_user_history th, #edd_sl_license_keys td, #edd_sl_license_keys th {
+#edd_user_history td,
+#edd_user_history th,
+#edd_sl_license_keys td,
+#edd_sl_license_keys th,
+#edd_subscription_receipt td,
+#edd_subscription_receipt th {
 	padding: 8px 10px;
 	font-size: 13px;
 	line-height: 16px;
