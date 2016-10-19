@@ -55,7 +55,7 @@ nav .logo {
 
 
 
-input[type="email"], input[type="tel"] {
+input[type="email"], input[type="tel"], input[type="url"] {
     height: 54px;
     line-height: 48px;
     padding-left: 16px;
@@ -143,4 +143,24 @@ input#rememberme {
 	padding: 8px 10px;
 	font-size: 13px;
 	line-height: 16px;
+}
+
+.post_meta {
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.comments-area li.comment {
+	padding: 15px;
+	background: #fff;
+	margin-bottom: 30px;
+}
+
+p.comment-form-comment label {
+	display: block;
+}
+
+.comment-respond {
+	margin-bottom: 30px;
 }
