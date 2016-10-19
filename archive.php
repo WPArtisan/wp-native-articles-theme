@@ -5,12 +5,14 @@
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<div class="col-md-7 col-md-offset-2">
+			<div class="col-md-8 col-md-offset-2">
 				<div class="content">
 					<h1><?php the_title(); ?></h1>
 
 					<div>
-						<?php the_content(); ?>
+						<?php if ( has_excerpt() ) : ?>
+							<?php the_excerpt(); ?>
+						<?php endif; ?>
 					</div>
 				</div>
 			</div>

@@ -93,3 +93,7 @@ input#rememberme {
 	-moz-appearance:    checkbox;
 	appearance:         checkbox;
 }
+
+#edd_user_history {
+	margin-bottom: 30px;
+}

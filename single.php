@@ -5,7 +5,7 @@
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<div class="col-md-7 col-md-offset-2">
+			<div class="col-md-8 col-md-offset-2">
 				<div class="content">
 					<h1><?php the_title(); ?></h1>
 
