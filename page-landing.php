@@ -104,7 +104,7 @@ get_header(); ?>
 				<div class="col-sm-6 col-md-5 col-md-offset-1 feature">
 					<h4>Readable Code.</h4>
 					<p>
-						Coded to WordPress standards, fully commented and contains as many filters and actions as we could possibly fit. The full developer documentation can be seen at <a href="http://developers.wp-native-articles.com">developers.wp-native-articles.com</a>.
+						Coded to WordPress standards, fully commented and contains as many filters and actions as we could possibly fit. The full documentation can be found at <a href="http://docs.wp-native-articles.com">docs.wp-native-articles.com</a>.
 					</p>
 				</div>
 			</div>
@@ -192,7 +192,7 @@ get_header(); ?>
 							<li>30 Day Money Back</li>
 						</ul>
 
-						<?php echo do_shortcode('[purchase_link id="12" text="Purchase" style="button" color="blue" price_id="1"]'); ?>
+						<?php echo do_shortcode('[purchase_link id="48" text="Purchase" style="button" color="blue" price_id="1"]'); ?>
 
 					</div>
 				</a>
@@ -211,7 +211,7 @@ get_header(); ?>
 							<li>30 Day Money Back</li>
 						</ul>
 
-						<?php echo do_shortcode('[purchase_link id="12" text="Purchase" style="button" color="blue" price_id="2"]'); ?>
+						<?php echo do_shortcode('[purchase_link id="48" text="Purchase" style="button" color="blue" price_id="2"]'); ?>
 
 					</div>
 				</a>
@@ -230,7 +230,7 @@ get_header(); ?>
 							<li>30 Day Money Back</li>
 						</ul>
 
-						<?php echo do_shortcode('[purchase_link id="12" text="Purchase" style="button" color="blue" price_id="3"]'); ?>
+						<?php echo do_shortcode('[purchase_link id="48" text="Purchase" style="button" color="blue" price_id="3"]'); ?>
 
 					</div>
 				</a>

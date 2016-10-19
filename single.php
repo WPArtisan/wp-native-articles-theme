@@ -4,13 +4,15 @@
 	<div class="row">
 
 		<?php while ( have_posts() ) : the_post(); ?>
+
 			<div class="col-md-7 col-md-offset-2">
-				<h1><?php the_title(); ?></h1>
+				<div class="content">
+					<h1><?php the_title(); ?></h1>
 
-				<div>
-					<?php the_content(); ?>
+					<div>
+						<?php the_content(); ?>
+					</div>
 				</div>
-
 			</div>
 
 		<?php endwhile; ?>
