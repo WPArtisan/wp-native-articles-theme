@@ -14,12 +14,16 @@
 					</h1>
 
 					<div class="featured_image">
-						<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
+						<a class="post-thumbnail" href="<?php echo esc_url( get_the_permalink() ); ?>" aria-hidden="true">
 							<?php the_post_thumbnail( 'post-thumbnail', array( 'alt' => the_title_attribute( 'echo=0' ) ) ); ?>
 						</a>
 					</div>
 
-					<time class="date"><?php the_date(); ?></time>
+					<div class="post_meta">
+						<time class="date"><?php the_date(); ?></time>
+						by
+						<?php echo esc_html( get_the_author() ); ?>
+					</div>
 
 					<div>
 						<?php the_excerpt(); ?>
