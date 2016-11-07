@@ -43,6 +43,10 @@ nav .logo {
 	text-align: center;
 }
 
+.navbar-toggle.in .menu .menu-item .sub-menu {
+	display: none;
+}
+
 .footer-1 .logo {
 	max-height: 30px;
 }
