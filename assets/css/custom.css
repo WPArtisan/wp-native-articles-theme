@@ -43,7 +43,8 @@ nav .logo {
 	text-align: center;
 }
 
-.navbar-collapse.in .menu .menu-item .sub-menu {
+.navbar-collapse.collapsing .menu .menu-item .sub-menu,
+.navbar-collapse.collapse.in .menu .menu-item .sub-menu {
 	display: none;
 }
 
