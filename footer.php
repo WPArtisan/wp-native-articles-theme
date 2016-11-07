@@ -4,7 +4,7 @@
 				<div class="row">
 					<div class="col-sm-6">
 						<p class="sub">
-							&copy; Copyright <?php echo date("Y"); ?> <A href="https://wpartisan.me">WPArtisan.me</a> - All Rights Reserved
+							&copy; Copyright <?php echo date("Y"); ?> <a href="https://wpartisan.me">WPArtisan.me</a> - All Rights Reserved
 						</p>
 					</div>
 

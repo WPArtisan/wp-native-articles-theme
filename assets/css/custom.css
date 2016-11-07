@@ -1,11 +1,46 @@
 /*!---------- PLACE YOUR CUSTOM STYLES AND OVERRIDES HERE ----------*/
 
 nav .logo {
-	max-height: 72px;
+	max-height: 36px;
 }
+
+@media screen and (min-width: 480px) {
+	nav .logo {
+		max-height: 72px;
+	}
+}
+
 
 .nav-1 .logo {
 	margin-top: 0px;
+}
+
+.navbar {
+	margin-bottom: 0px;
+}
+
+.navbar-default {
+	background: #ffffff;
+}
+
+.navbar-brand {
+	height: auto;
+}
+
+.navbar-toggle {
+	margin-top: 15px;
+}
+
+.menu {
+	margin-top: 33px;
+}
+
+.navbar-toggle.in .menu {
+	margin-top: 8px;
+}
+
+.navbar-collapse {
+	text-align: center;
 }
 
 .footer-1 .logo {

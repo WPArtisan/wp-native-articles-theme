@@ -302,7 +302,7 @@ get_header(); ?>
 					<!-- Begin MailChimp Signup Form -->
 					<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
 					<style type="text/css">
-						#mc_embed_signup { width: 800px; margin: 0 auto; }
+						#mc_embed_signup { max-width: 800px; margin: 0 auto; }
 						#mc_embed_signup form { text-align: center; }
 						#mc_embed_signup input.email, #mc_embed_signup input.button { display: inline-block; }
 						#mc_embed_signup .clear { display: block; }
