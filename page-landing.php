@@ -66,7 +66,7 @@ get_header(); ?>
 		<div class="container">
 			<div class="row v-align-children">
 				<div class="col-sm-6 text-center feature">
-					<img alt="Feature Image" src="<?php echo get_template_directory_uri(); ?>/assets/img/wordpress-instant-articles-api-stats.png">
+					<img alt="Feature Image" src="<?php echo get_template_directory_uri(); ?>/assets/img/wordpress-facebook-instant-articles-api-stats.png">
 				</div>
 
 				<div class="col-sm-6 col-md-5 col-md-offset-1 feature">
@@ -87,7 +87,7 @@ get_header(); ?>
 				</div>
 
 				<div class="col-sm-6 col-md-offset-1 text-center feature">
-					<img alt="Feature Image" src="<?php echo get_template_directory_uri(); ?>/assets/img/wordpress-instant-articles-import-status.png">
+					<img alt="Feature Image" src="<?php echo get_template_directory_uri(); ?>/assets/img/wordpress-facebook-instant-articles-import-status.png">
 				</div>
 
 			</div>
@@ -98,7 +98,7 @@ get_header(); ?>
 		<div class="container">
 			<div class="row v-align-children">
 				<div class="col-sm-6 text-center feature">
-					<img alt="Feature Image" src="<?php echo get_template_directory_uri(); ?>/assets/img/wp-instant-articles-comments-filters.png">
+					<img alt="Feature Image" src="<?php echo get_template_directory_uri(); ?>/assets/img/wordpress-facebook-instant-articles-comments-filters.png">
 				</div>
 
 				<div class="col-sm-6 col-md-5 col-md-offset-1 feature">
