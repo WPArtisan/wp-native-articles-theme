@@ -1,0 +1,45 @@
+{
+  "name": "wp-native-articles",
+  "description": "",
+  "main": [],
+  "dependencies": {
+    "html5shiv": "~3.7.3",
+    "lazyloadxt": "~1.0.5"
+  },
+  "devDependencies": {},
+  "overrides": {
+    "html5shiv": {
+      "ignore": [
+        "*"
+      ]
+    },
+    "jquery": {
+      "ignore": [
+        "*",
+        "src/**"
+      ]
+    },
+    "lazyloadxt": {
+      "ignore": [
+        "*"
+      ]
+    }
+  },
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [],
+  "authors": [
+    "Edward D <edward@wpartisan.me>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
