@@ -36,6 +36,7 @@ class WPNAT_Main {
 		add_action( 'wp_head', array( $this, 'combined_css_link' ), 10, 0 );
 
 // https://make.wordpress.org/core/2015/07/27/site-icon/
+// https://make.wordpress.org/core/2015/11/10/responsive-images-in-wordpress-4-4/
 		add_filter( 'template_include', array( $this, 'include_combined_assets' ), 10, 1 );
 		add_filter( 'wp_default_scripts', array( $this, 'dequeue_jquery_migrate' ), 10, 1 );
 	}
@@ -140,22 +141,22 @@ class WPNAT_Main {
 			$wp_styles = new WP_Styles();
 		}
 
-		$wp_styles->all_deps( array_keys( $wp_styles->registered ) );
+		$wp_styles->all_deps( $wp_styles->queue );
 
 		$expiresOffset = 28 * DAY_IN_SECONDS;
 		header( "Content-Type: text/css; charset=" . get_bloginfo( 'charset' ) );
 		header( "Vary: Accept-Encoding" ); // Handle proxies
 		// header( "Expires: " . gmdate( "D, d M Y H:i:s", time() + $expiresOffset ) . " GMT" );
 
-		$content = 'a {color: purple;}';
+		$content = '';
 
-		// foreach ( (array) $wp_styles->to_do as $style ) {
-		// 	$style = $wp_styles->registered[ $style ];
-		// 	if ( is_readable( ABSPATH . $style->src ) ) {
-		// 		$content .= file_get_contents( ABSPATH . $style->src );
-		// 	}
-		// 	$content .= "\n\n";
-		// }
+		foreach ( (array) $wp_styles->to_do as $style ) {
+			$style = $wp_styles->registered[ $style ];
+			if ( is_readable( ABSPATH . $style->src ) ) {
+				$content .= file_get_contents( ABSPATH . $style->src );
+			}
+			$content .= "\n\n";
+		}
 
 		echo $content;
 
@@ -172,7 +173,7 @@ class WPNAT_Main {
 	 * @return void
 	 */
 	public function dequeue_jquery_migrate( &$scripts ){
-		if ( !is_admin() ) {
+		if ( ! is_admin() ) {
 			$scripts->remove( 'jquery');
 			$scripts->add( 'jquery', false, array( 'jquery-core' ), '1.10.2' );
 		}
