@@ -25,21 +25,29 @@ class WPNAT_Main {
 	 */
 	public function hooks() {
 		add_action( 'init', array( $this, 'add_assets_endpoint' ), 10, 0 );
-		add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 10, 1 );
-		add_action( 'wp_enqueue_styles',  array( $this, 'styles' ), 10, 1 );
+		add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 10, 0 );
+		add_action( 'wp_enqueue_styles',  array( $this, 'styles' ), 10, 0 );
 
 		// Deregister the normal print styles function.
-		remove_action( 'wp_head', 'wp_print_styles', 8 );
+		// remove_action( 'wp_head', 'wp_print_styles', 8 );
 		// Register the custom one for critical CSS.
-		add_action( 'wp_head', array( $this, 'critical_css' ), 10, 0 );
+		// add_action( 'wp_head', array( $this, 'critical_css' ), 10, 0 );
 		// Register the custom one for the combined, lazy-loaded CSS files.
-		add_action( 'wp_head', array( $this, 'combined_css_link' ), 10, 0 );
+		// add_action( 'wp_head', array( $this, 'combined_css_link' ), 10, 0 );
 
 // https://make.wordpress.org/core/2015/07/27/site-icon/
 // https://make.wordpress.org/core/2015/11/10/responsive-images-in-wordpress-4-4/
-		add_filter( 'template_include', array( $this, 'include_combined_assets' ), 10, 1 );
-		add_filter( 'wp_default_scripts', array( $this, 'dequeue_jquery_migrate' ), 10, 1 );
+		// add_filter( 'template_include', array( $this, 'include_combined_assets' ), 10, 1 );
+		// add_filter( 'wp_default_scripts', array( $this, 'dequeue_jquery_migrate' ), 10, 1 );
+
+
+add_filter( 'query_vars', array( $this,  'add_query_vars_filter' ), 10, 1 );
 	}
+function add_query_vars_filter( $vars ){
+$vars[] = 's';
+return $vars;
+}
+
 
 	/**
 	 * Creates an `assets` endpoint.
@@ -58,7 +66,7 @@ class WPNAT_Main {
 	 * @param string $hook Unique hook for the current page.
 	 * @return void
 	 */
-	public function scripts( $hook ) {
+	public function scripts() {
 
 	}
 
@@ -69,8 +77,9 @@ class WPNAT_Main {
 	 * @param string $hook Unique hook for the current page.
 	 * @return void
 	 */
-	public function styles( $hook ) {
-
+	public function styles() {
+		wp_register_style( 'main', get_template_directory_uri() . '/assets/_css/main.min.css', [], '1.1.8', 'screen' );
+		wp_enqueue_style( 'main' );
 	}
 
 	/**
@@ -98,8 +107,18 @@ class WPNAT_Main {
 	 * @return void
 	 */
 	public function combined_css_link() {
+
+		global $wp_styles;
+
+		$stylesheets = array();
+
+		foreach ( $wp_styles->queue as $style ) {
+			$stylesheets[] = $wp_styles->registered[ $style ]->handle;
+		}
+
 		// Construct the URL.
 		$url = add_query_arg( array(
+			's' => implode( ',', $stylesheets ),
 			'v' => WPNAT_VERSION,
 		), site_url( 'assets/combined.min.css' ) );
 		?>
@@ -125,7 +144,8 @@ class WPNAT_Main {
 		}
 
 		if ( 'combined.min.css' === get_query_var( 'assets', false ) ) {
-			$this->serve_css();
+			$handles = explode( ',', get_query_var( 's', array() ) );
+			$this->serve_css( $handles );
 		}
 
 		// Nothing we want, return 404.
@@ -134,14 +154,14 @@ class WPNAT_Main {
 		wp_die();
 	}
 
-	function serve_css() {
+	function serve_css( $handles ) {
 		global $wp_styles;
 
 		if ( ! is_a( $wp_styles, 'WP_Styles' ) ) {
 			$wp_styles = new WP_Styles();
 		}
 
-		$wp_styles->all_deps( $wp_styles->queue );
+		$wp_styles->all_deps( $handles );
 
 		$expiresOffset = 28 * DAY_IN_SECONDS;
 		header( "Content-Type: text/css; charset=" . get_bloginfo( 'charset' ) );
