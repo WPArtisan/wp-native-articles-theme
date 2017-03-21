@@ -9,28 +9,37 @@
   "author": "Edward D <edward@thetab.com>",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^6.7.7",
     "bower": "^1.4.1",
+    "cssnext": "^1.8.4",
     "del": "^1.2.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^2.3.1",
     "gulp-bower": "0.0.10",
     "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.1.2",
     "gulp-jshint": "^1.11.2",
     "gulp-load-plugins": "^0.10.0",
     "gulp-minify-css": "^1.2.0",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.0.1",
+    "gulp-postcss": "^6.4.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.4",
     "gulp-scss-lint": "^0.2.2",
     "gulp-size": "^1.3.0",
     "gulp-uglify": "^1.2.0",
     "main-bower-files": "^2.9.0",
-    "run-sequence": "^1.1.2"
+    "postcss-url": "^5.1.2",
+    "precss": "^1.4.0",
+    "run-sequence": "^1.1.2",
+    "tachyons": "^4.6.1"
   },
   "dependencies": {
     "gulp-bower-src": "^0.1.0",
     "merge-stream": "^1.0.0",
-    "path": "^0.11.14"
+    "path": "^0.11.14",
+    "tachyons": "^4.6.2",
+    "tachyons-cli": "^1.0.10"
   }
 }

@@ -24,9 +24,9 @@ class WPNAT_Main {
 	 * @return void
 	 */
 	public function hooks() {
-		add_action( 'init', array( $this, 'add_assets_endpoint' ), 10, 0 );
+		// add_action( 'init', array( $this, 'add_assets_endpoint' ), 10, 0 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 10, 0 );
-		add_action( 'wp_enqueue_styles',  array( $this, 'styles' ), 10, 0 );
+		add_action( 'wp_enqueue_scripts', array( $this, 'styles' ), 10, 0 );
 
 		// Deregister the normal print styles function.
 		// remove_action( 'wp_head', 'wp_print_styles', 8 );
@@ -41,8 +41,9 @@ class WPNAT_Main {
 		// add_filter( 'wp_default_scripts', array( $this, 'dequeue_jquery_migrate' ), 10, 1 );
 
 
-add_filter( 'query_vars', array( $this,  'add_query_vars_filter' ), 10, 1 );
+// add_filter( 'query_vars', array( $this,  'add_query_vars_filter' ), 10, 1 );
 	}
+
 function add_query_vars_filter( $vars ){
 $vars[] = 's';
 return $vars;
@@ -78,7 +79,9 @@ return $vars;
 	 * @return void
 	 */
 	public function styles() {
-		wp_register_style( 'main', get_template_directory_uri() . '/assets/_css/main.min.css', [], '1.1.8', 'screen' );
+		wp_register_style( 'tachyons', 'https://unpkg.com/tachyons@4.6.1/css/tachyons.min.css', [], '4.6.1', 'all' );
+		wp_register_style( 'main', get_template_directory_uri() . '/assets/_css/main.min.css', [ 'tachyons' ], '1.1.8', 'screen' );
+
 		wp_enqueue_style( 'main' );
 	}
 
@@ -161,7 +164,12 @@ return $vars;
 			$wp_styles = new WP_Styles();
 		}
 
-		$wp_styles->all_deps( $handles );
+$t = $wp_styles->registered;
+
+var_dump( $t ); die;
+foreach ( $handles as $h )
+		$wp_styles->do_item( $h );
+		die;
 
 		$expiresOffset = 28 * DAY_IN_SECONDS;
 		header( "Content-Type: text/css; charset=" . get_bloginfo( 'charset' ) );

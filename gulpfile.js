@@ -59,27 +59,51 @@ onError = function(err) {
 \*-----------------------------------------*/
 
 gulp.task('styles', function () {
-	return gulp.src(paths.scss)
+
+	var cssnano = require('gulp-cssnano');
+	var postcss = require('gulp-postcss');
+	var cssnext = require('cssnext');
+	var cssimport = require('postcss-import');
+	var cssurl = require('postcss-url');
+	var autoprefixer = require('autoprefixer');
+
+	var processors = [
+		cssimport,
+		cssurl,
+		cssnext,
+		autoprefixer
+	];
+
+	return gulp.src( basePaths.src + 'css/**/*.css' )
 		.pipe( $.plumber({errorHandler: onError}) )
-		.pipe( $.sass({ style: 'expanded', }))
-		.pipe( $.autoprefixer( 'last 2 version' ) )
+		.pipe( postcss( processors ) )
 		.pipe( gulp.dest(basePaths.dest + '_css') )
-		.pipe( $.rename({ suffix: '.min' }) ) // Remove to generate style.css for WordPress
-		.pipe( $.minifyCss({
-			//https://www.npmjs.com/package/clean-css#how-to-set-compatibility-mode
-			compatibility : 'ie7,' +
-				'-units.ch,' +
-				'-units.in,' +
-				'-units.pc,' +
-				'-units.pt,' +
-				'-units.rem,' +
-				'-units.vh,' +
-				'-units.vm,' +
-				'-units.vmax,' +
-				'-units.vmin'
-		}))
+		.pipe( $.rename({ suffix: '.min' }) )
+		.pipe( $.cssnano() )
 		.pipe( gulp.dest(basePaths.dest + '_css') )
 		.pipe( $.size({title: 'Styles'}));
+
+	// return gulp.src(paths.scss)
+	// 	.pipe( $.plumber({errorHandler: onError}) )
+	// 	.pipe( $.sass({ style: 'expanded', }))
+	// 	.pipe( $.autoprefixer( 'last 2 version' ) )
+	// 	.pipe( gulp.dest(basePaths.dest + '_css') )
+	// 	.pipe( $.rename({ suffix: '.min' }) ) // Remove to generate style.css for WordPress
+	// 	.pipe( $.minifyCss({
+	// 		//https://www.npmjs.com/package/clean-css#how-to-set-compatibility-mode
+	// 		compatibility : 'ie7,' +
+	// 			'-units.ch,' +
+	// 			'-units.in,' +
+	// 			'-units.pc,' +
+	// 			'-units.pt,' +
+	// 			'-units.rem,' +
+	// 			'-units.vh,' +
+	// 			'-units.vm,' +
+	// 			'-units.vmax,' +
+	// 			'-units.vmin'
+	// 	}))
+	// 	.pipe( gulp.dest(basePaths.dest + '_css') )
+	// 	.pipe( $.size({title: 'Styles'}));
 });
 
 /*-----------------------------------------*\
