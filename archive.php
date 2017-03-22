@@ -35,7 +35,7 @@
 	</div>
 <?php endif; ?>
 
-<?php wp_bs_pagination(); ?>
+<?php // wp_bs_pagination(); ?>
 
 
 <?php get_footer(); ?>

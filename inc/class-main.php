@@ -28,6 +28,9 @@ class WPNAT_Main {
 		add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 10, 0 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'styles' ), 10, 0 );
 
+
+
+
 		// Deregister the normal print styles function.
 		// remove_action( 'wp_head', 'wp_print_styles', 8 );
 		// Register the custom one for critical CSS.
@@ -38,7 +41,10 @@ class WPNAT_Main {
 // https://make.wordpress.org/core/2015/07/27/site-icon/
 // https://make.wordpress.org/core/2015/11/10/responsive-images-in-wordpress-4-4/
 		// add_filter( 'template_include', array( $this, 'include_combined_assets' ), 10, 1 );
-		// add_filter( 'wp_default_scripts', array( $this, 'dequeue_jquery_migrate' ), 10, 1 );
+		//
+		add_filter( 'the_content', array( $this, 'format_content' ), 10, 1 );
+		add_filter( 'excerpt_more', array( $this, 'excerpt_more' ), 10, 1 );
+		add_filter( 'wp_default_scripts', array( $this, 'dequeue_jquery_migrate' ), 10, 1 );
 
 
 // add_filter( 'query_vars', array( $this,  'add_query_vars_filter' ), 10, 1 );
@@ -191,6 +197,34 @@ foreach ( $handles as $h )
 		die;
 	}
 
+	/**
+	 * [format_p_tags description]
+	 * @param  [type]  $content [description]
+	 * @return {[type]          [description]
+	 */
+	public function format_content( $content ) {
+		$replace = array(
+			'<blockquote><p>' => '<blockquote class="athelas ml0 mt0 pl4 black-90 bl bw2 b--blue"><p class="f5 f4-m f3-l lh-copy measure mt0">',
+			'<ul>' => '<ul class="list ph3 ph3-ns pv1">',
+			'<ol>' => '<ol class="list ph3 ph3-ns pv1">',
+			'<li>' => '<li class="mr2 pv2">',
+			'<p>'  => '<p class="f4 f4-ns lh-copy measure mb4">',
+			'<h3>' => '<h3 class="f2 f1-m fw2 lh-title mv0">',
+		);
+
+		return str_ireplace( array_keys( $replace ), array_values( $replace ), $content );
+	}
+
+	/**
+	 * Filter the excerpt "read more" string.
+	 *
+	 * @access public
+	 * @param string $more "Read more" excerpt string.
+	 * @return string (Maybe) modified "read more" excerpt string.
+	 */
+	public function excerpt_more( $more ) {
+		return '';
+	}
 
 	/**
 	 * Deregister the jquery migrate lib.

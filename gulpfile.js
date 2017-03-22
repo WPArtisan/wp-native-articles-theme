@@ -25,6 +25,7 @@ var $              = require('gulp-load-plugins')()
 	, paths = {
 		img  : basePaths.src + 'img/**/*',
 		fonts : basePaths.src + 'fonts/**/*',
+		css : basePaths.src + 'css/**/*.css',
 		scss : basePaths.src + 'scss/**/*.scss',
 		js   : {
 			src    : basePaths.src + 'js'
@@ -74,7 +75,7 @@ gulp.task('styles', function () {
 		autoprefixer
 	];
 
-	return gulp.src( basePaths.src + 'css/**/*.css' )
+	return gulp.src( paths.css )
 		.pipe( $.plumber({errorHandler: onError}) )
 		.pipe( postcss( processors ) )
 		.pipe( gulp.dest(basePaths.dest + '_css') )
@@ -83,27 +84,6 @@ gulp.task('styles', function () {
 		.pipe( gulp.dest(basePaths.dest + '_css') )
 		.pipe( $.size({title: 'Styles'}));
 
-	// return gulp.src(paths.scss)
-	// 	.pipe( $.plumber({errorHandler: onError}) )
-	// 	.pipe( $.sass({ style: 'expanded', }))
-	// 	.pipe( $.autoprefixer( 'last 2 version' ) )
-	// 	.pipe( gulp.dest(basePaths.dest + '_css') )
-	// 	.pipe( $.rename({ suffix: '.min' }) ) // Remove to generate style.css for WordPress
-	// 	.pipe( $.minifyCss({
-	// 		//https://www.npmjs.com/package/clean-css#how-to-set-compatibility-mode
-	// 		compatibility : 'ie7,' +
-	// 			'-units.ch,' +
-	// 			'-units.in,' +
-	// 			'-units.pc,' +
-	// 			'-units.pt,' +
-	// 			'-units.rem,' +
-	// 			'-units.vh,' +
-	// 			'-units.vm,' +
-	// 			'-units.vmax,' +
-	// 			'-units.vmin'
-	// 	}))
-	// 	.pipe( gulp.dest(basePaths.dest + '_css') )
-	// 	.pipe( $.size({title: 'Styles'}));
 });
 
 /*-----------------------------------------*\
@@ -228,6 +208,7 @@ gulp.task('watch', function() {
 	gulp.watch(paths.img, ['images']);
 	gulp.watch(paths.fonts, ['fonts']);
 	gulp.watch(paths.scss, ['styles']);
+	gulp.watch(paths.css, ['styles']);
 	gulp.watch(paths.js.src + '/**/*.js', ['scripts']);
 });
 
