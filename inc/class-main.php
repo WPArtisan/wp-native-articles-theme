@@ -74,7 +74,7 @@ return $vars;
 	 * @return void
 	 */
 	public function scripts() {
-
+		wp_enqueue_script( 'jquery' );
 	}
 
 	/**
@@ -85,8 +85,7 @@ return $vars;
 	 * @return void
 	 */
 	public function styles() {
-		wp_register_style( 'tachyons', 'https://unpkg.com/tachyons@4.6.1/css/tachyons.min.css', [], '4.6.1', 'all' );
-		wp_register_style( 'main', get_template_directory_uri() . '/assets/_css/main.min.css', [ 'tachyons' ], '1.1.8', 'screen' );
+		wp_register_style( 'main', get_template_directory_uri() . '/assets/_css/main.min.css', [  ], '1.1.8', 'screen' );
 
 		wp_enqueue_style( 'main' );
 	}
@@ -204,12 +203,13 @@ foreach ( $handles as $h )
 	 */
 	public function format_content( $content ) {
 		$replace = array(
-			'<blockquote><p>' => '<blockquote class="athelas ml0 mt0 pl4 black-90 bl bw2 b--blue"><p class="f5 f4-m f3-l lh-copy measure mt0">',
+			'<blockquote><p>' => '<blockquote class="ml0 mt0 pl4 black-90 bl bw2 b--wpna-blue"><p class="f4 f3-l lh-copy mt0">',
 			'<ul>' => '<ul class="list ph3 ph3-ns pv1">',
 			'<ol>' => '<ol class="list ph3 ph3-ns pv1">',
 			'<li>' => '<li class="mr2 pv2">',
-			'<p>'  => '<p class="f4 f4-ns lh-copy measure mb4">',
+			'<p>'  => '<p class="lh-copy mb4">',
 			'<h3>' => '<h3 class="f2 f1-m fw2 lh-title mv0">',
+			'<a'  => '<a class="wpna-blue"',
 		);
 
 		return str_ireplace( array_keys( $replace ), array_values( $replace ), $content );

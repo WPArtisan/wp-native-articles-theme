@@ -1,1 +1,10 @@
 @import "../../node_modules/tachyons/css/tachyons.min.css";
+
+.b--wpna-blue{border-color:#38acd2}
+.wpna-blue { color:#38acd2}
+.hover-wpna-blue:focus,.hover-wpna-blue:hover { color:#38acd2}
+.bg-wpna-blue { background-color:#38acd2; }
+.hover-bg-wpna-blue:focus,.hover-bg-wpna-blue:hover { background-color: #38acd2; }
+.striped--wpna-blue:nth-child(odd){background-color:#38acd2}
+
+.f4-5 {font-size:1.125rem}

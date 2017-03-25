@@ -27,18 +27,18 @@ if ( is_user_logged_in() ):
 	<?php do_action( 'edd_profile_editor_before' ); ?>
 
 
-<main class="pa4 black-80">
-	<form id="edd_profile_editor_form" class="edd_form measure center" action="<?php echo edd_get_current_page_url(); ?>" method="post">
+<main class="black-80">
+	<form id="edd_profile_editor_form" class="edd_form measure" action="<?php echo edd_get_current_page_url(); ?>" method="post">
 		<fieldset id="sign_up" class="ba b--transparent ph0 mh0">
 			<legend class="f4 fw6 ph0 mh0">Change your Name</legend>
 
 			<div class="mt3">
 				<label class="db fw6 lh-copy f6" for="edd_first_name"><?php _e( 'First Name', 'easy-digital-downloads' ); ?></label>
-				<input name="edd_first_name" id="edd_first_name" class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 text edd-input" type="text" value="<?php echo esc_attr( $first_name ); ?>" />
+				<input name="edd_first_name" id="edd_first_name" class="pa2 input-reset ba bg-transparent hover-bg-light-gray w-100 text edd-input" type="text" value="<?php echo esc_attr( $first_name ); ?>" />
 			</div>
 			<div class="mv3">
 				<label class="db fw6 lh-copy f6" for="edd_last_name"><?php _e( 'Last Name', 'easy-digital-downloads' ); ?></label>
-				<input name="edd_last_name" id="edd_last_name" class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 text edd-input" type="text" value="<?php echo esc_attr( $last_name ); ?>" />
+				<input name="edd_last_name" id="edd_last_name" class="pa2 input-reset ba bg-transparent hover-bg-light-gray w-100 text edd-input" type="text" value="<?php echo esc_attr( $last_name ); ?>" />
 			</div>
 
 			<div class="mv3">
@@ -68,7 +68,7 @@ if ( is_user_logged_in() ):
 				<?php if ( $customer->id > 0 ) : ?>
 
 					<?php if ( 1 === count( $customer->emails ) ) : ?>
-						<input name="edd_email" id="edd_email" class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 text edd-input required" type="email" value="<?php echo esc_attr( $customer->email ); ?>" />
+						<input name="edd_email" id="edd_email" class="pa2 input-reset ba bg-transparent hover-bg-light-gray w-100 text edd-input required" type="email" value="<?php echo esc_attr( $customer->email ); ?>" />
 					<?php else: ?>
 						<?php
 							$emails           = array();
@@ -91,7 +91,7 @@ if ( is_user_logged_in() ):
 						?>
 					<?php endif; ?>
 				<?php else: ?>
-					<input name="edd_email" id="edd_email" class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 text edd-input required" type="email" value="<?php echo esc_attr( $current_user->user_email ); ?>" />
+					<input name="edd_email" id="edd_email" class="pa2 input-reset ba bg-transparent hover-bg-light-gray w-100 text edd-input required" type="email" value="<?php echo esc_attr( $current_user->user_email ); ?>" />
 				<?php endif; ?>
 
 				<?php do_action( 'edd_profile_editor_email' ); ?>
@@ -134,23 +134,23 @@ if ( is_user_logged_in() ):
 
 			<div class="mv3">
 				<label class="db fw6 lh-copy f6" for="edd_address_line1"><?php _e( 'Line 1', 'easy-digital-downloads' ); ?></label>
-				<input name="edd_address_line1" id="edd_address_line1" class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 text edd-input" type="text" value="<?php echo esc_attr( $address['line1'] ); ?>" />
+				<input name="edd_address_line1" id="edd_address_line1" class="pa2 input-reset ba bg-transparent hover-bg-light-gray w-100 text edd-input" type="text" value="<?php echo esc_attr( $address['line1'] ); ?>" />
 			</div>
 			<div class="mv3">
 				<label class="db fw6 lh-copy f6" for="edd_address_line2"><?php _e( 'Line 2', 'easy-digital-downloads' ); ?></label>
-				<input name="edd_address_line2" id="edd_address_line2" class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 text edd-input" type="text" value="<?php echo esc_attr( $address['line2'] ); ?>" />
+				<input name="edd_address_line2" id="edd_address_line2" class="pa2 input-reset ba bg-transparent hover-bg-light-gray w-100 text edd-input" type="text" value="<?php echo esc_attr( $address['line2'] ); ?>" />
 			</div>
 			<div class="mv3">
 				<label class="db fw6 lh-copy f6" for="edd_address_city"><?php _e( 'City', 'easy-digital-downloads' ); ?></label>
-				<input name="edd_address_city" id="edd_address_city" class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 text edd-input" type="text" value="<?php echo esc_attr( $address['city'] ); ?>" />
+				<input name="edd_address_city" id="edd_address_city" class="pa2 input-reset ba bg-transparent hover-bg-light-gray w-100 text edd-input" type="text" value="<?php echo esc_attr( $address['city'] ); ?>" />
 			</div>
 			<div class="mv3">
 				<label class="db fw6 lh-copy f6" for="edd_address_zip"><?php _e( 'Zip / Postal Code', 'easy-digital-downloads' ); ?></label>
-				<input name="edd_address_zip" id="edd_address_zip" class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 text edd-input" type="text" value="<?php echo esc_attr( $address['zip'] ); ?>" />
+				<input name="edd_address_zip" id="edd_address_zip" class="pa2 input-reset ba bg-transparent hover-bg-light-gray w-100 text edd-input" type="text" value="<?php echo esc_attr( $address['zip'] ); ?>" />
 			</div>
 			<div class="mv3">
 				<label class="db fw6 lh-copy f6" for="edd_address_country"><?php _e( 'Country', 'easy-digital-downloads' ); ?></label>
-				<select name="edd_address_country" id="edd_address_country" class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 select edd-select">
+				<select name="edd_address_country" id="edd_address_country" class="pa2 input-reset ba bg-transparent hover-bg-light-gray w-100 select edd-select">
 					<?php foreach( edd_get_country_list() as $key => $country ) : ?>
 					<option value="<?php echo $key; ?>"<?php selected( $address['country'], $key ); ?>><?php echo esc_html( $country ); ?></option>
 					<?php endforeach; ?>
@@ -160,7 +160,7 @@ if ( is_user_logged_in() ):
 				<label class="db fw6 lh-copy f6" for="edd_address_state"><?php _e( 'State / Province', 'edd' ); ?></label>
 				<?php
 					if( ! empty( $states ) ) : ?>
-					<select name="edd_address_state" id="edd_address_state" class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 select edd-select">
+					<select name="edd_address_state" id="edd_address_state" class="pa2 input-reset ba bg-transparent hover-bg-light-gray w-100 select edd-select">
 						<?php
 							foreach( $states as $state_code => $state_name ) {
 								echo '<option value="' . $state_code . '"' . selected( $state_code, $state, false ) . '>' . $state_name . '</option>';
@@ -168,7 +168,7 @@ if ( is_user_logged_in() ):
 						?>
 					</select>
 					<?php else : ?>
-				<input name="edd_address_state" id="edd_address_state" class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 text edd-input" type="text" value="<?php echo esc_attr( $state ); ?>" />
+				<input name="edd_address_state" id="edd_address_state" class="pa2 input-reset ba bg-transparent hover-bg-light-gray w-100 text edd-input" type="text" value="<?php echo esc_attr( $state ); ?>" />
 				<?php endif; ?>
 			</div>
 
@@ -180,12 +180,12 @@ if ( is_user_logged_in() ):
 
 			<div class="mv3">
 				<label class="db fw6 lh-copy f6" for="edd_user_pass"><?php _e( 'New Password', 'easy-digital-downloads' ); ?></label>
-				<input name="edd_new_user_pass1" id="edd_new_user_pass1" class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 password edd-input" type="password"/>
+				<input name="edd_new_user_pass1" id="edd_new_user_pass1" class="pa2 input-reset ba bg-transparent hover-bg-light-gray w-100 password edd-input" type="password"/>
 			</div>
 
 			<div class="mv3">
 				<label class="db fw6 lh-copy f6" for="edd_user_pass"><?php _e( 'Re-enter Password', 'easy-digital-downloads' ); ?></label>
-				<input name="edd_new_user_pass2" id="edd_new_user_pass2" class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 password edd-input" type="password"/>
+				<input name="edd_new_user_pass2" id="edd_new_user_pass2" class="pa2 input-reset ba bg-transparent hover-bg-light-gray w-100 password edd-input" type="password"/>
 				<?php do_action( 'edd_profile_editor_password' ); ?>
 			</div>
 
@@ -207,6 +207,5 @@ if ( is_user_logged_in() ):
 
 	<?php
 else:
-	echo '<p>' . __( 'You need to login to edit your profile.', 'easy-digital-downloads' ) . '</p>';
 	echo edd_login_form();
 endif;
