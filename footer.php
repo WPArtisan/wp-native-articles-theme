@@ -1,4 +1,4 @@
-	<footer class="mt5">
+	<footer class="">
 
 		<section class="ph3 ph5-m ph6-l pv4 cf center bg-black-80 white">
 			<div class="mb4-l mb0 w-100 w-50-l fr tc tr-l">

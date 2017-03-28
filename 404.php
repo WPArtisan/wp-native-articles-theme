@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section class="vh-100">
+<section class="vh-100 bg-lightest-blue">
 	<header class="tc ph5 lh-copy">
 		<h1 class="f1 f-headline-l code mb3 fw9 dib tracked-tight light-purple">404</h1>
 		<h2 class="tc f1-l fw1"><?php esc_html_e( 'Sorry, we can\'t find the page you are looking for.', 'wp-native-articles-theme' ); ?></h2>

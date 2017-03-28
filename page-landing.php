@@ -5,174 +5,255 @@
 
 get_header(); ?>
 
-	<section class="w-100 pa4 bg-light-blue">
+	<section class="w-100 pa4 bg-light-blue tc">
 
 		<h1 class="white tc f1 fw6 lh-heading" style="text-shadow: 3px 3px rgba( 0, 0, 0, 0.1 );"><b>WordPress</b> Native Articles</h1>
 		<h5 class="white tc f3 fw3 lh-heading">THE Premium WordPress Plugin for Facebook Instant Articles</h5>
-
+		<a class="dib center link bg-black-80 white pv3 ph4 br1" target="_blank" href="https://wordpress.org/plugins/wp-native-articles/"><?php esc_html_e( 'Download Free Version', 'wp-native-articles-theme' ); ?></a>
 	</section>
 
+	<?php
+		$latest_blog_posts = get_posts( array( 'numberposts' => 1, 'no_found_rows' => true ) );
+	?>
+
+	<?php if ( $latest_blog_posts ) : ?>
+		<?php foreach ( $latest_blog_posts as $latest_blog_post ) : ?>
+			<div class="bg-light-gray w100 ph4 pv3 tc">
+
+				<span class="dib link bg-light-pink br1 ttu white pv2 ph3 mr3">
+					<?php esc_html_e( 'Latest', 'wp-native-articles-theme' ); ?>
+				</span>
+
+				<p class="dib f4 fw3 black-40">
+					<?php echo esc_html( $latest_blog_post->post_title ); ?>
+				</p>
+
+				<a class="dib link black-80 f4 fw5" href="<?php echo esc_url( get_permalink( $latest_blog_post->ID ) ); ?>"><?php esc_html_e( 'Read More', 'wp-native-articles-theme' ); ?></a>
+			</div>
+		<?php endforeach; ?>
+	<?php endif; ?>
 
 
-	<!-- <section class="header header-11 overlay">
+	<section class="w-80 center pv3 tc">
+		<h2 class="f2 fw6 lh-title">WordPress + Facebook Instant Articles. Simple.</h2>
+		<h4 class="f4 fw3 lh-subtitle">It shouldn't be difficult. Don't make it.</h4>
 
-		<div class="background-image-holder">
-			<img alt="Background Image" class="background-image" src="<?php echo get_template_directory_uri(); ?>/assets/img/hero14.jpg">
-		</div>
+<!-- <div class="fl w-100 w-25-ns pa2">
+	<div class="outline bg-white pv4">
+		<h3>PACKED full of features.</h3>
+		<p>The most feature rich WordPress Instant Article Plugin - making it super easy to manage your Facebook articles.</p>
+	</div>
+</div> -->
 
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12 text-center">
-					<h2 class="text-white"><b>WordPress</b> Native Articles</h2>
-					<h5 class="text-white">THE Premium WordPress Plugin for Facebook Instant Articles</h5>
+		<div class="cf center">
+			<div class="fl w-100 w-third-ns pa2">
+				<div class="">
+					<h5 class="f3 fw5 lh-title">API &amp; RSS Feed Methods</h5>
+					<p class="f4-5 lh-copy">Connect your WordPress site to your Facebook Instant Articles Page using either the RSS Feed or the API method for realtime time article syncing.</p>
 				</div>
 			</div>
-		</div>
-	</section>
-
-	<section class="features features-3">
-
-		<a name="features"></a>
-
-		<div class="container">
-
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1 col-sm-12 text-center">
-					<h3>PACKED full of features.</h3>
-					<p>The most feature rich WordPress Instant Article Plugin - making it super easy to manage your Facebook articles.</p>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-sm-4 text-center feature">
-					<i class="icon-laptop"></i>
-					<h5>API &amp; RSS Feed Methods</h5>
-					<p>
-						Connect your WordPress site to your Facebook Instant Articles Page using either the RSS Feed or the API method for realtime time article syncing.
-					</p>
-				</div>
-
-				<div class="col-sm-4 text-center feature">
-					<i class="icon-browser-streamline-window"></i>
-					<h5>Advanced Content Parser</h5>
-					<p>
+			<div class="fl w-100 w-third-ns pa2">
+				<div class="">
+					<h5 class="f3 fw5 lh-title">Advanced Content Parser</h5>
+					<p class="f4-5 lh-copy">
 						Instant Articles has a strict XML structure, WordPress does not. Our advanced parsing algorithm converts messy WordPress HTML into valid Instant Article XML.
 					</p>
 				</div>
-
-				<div class="col-sm-4 text-center feature">
-					<i class="icon-backpack-streamline-trekking"></i>
-					<h5>Options Galore</h5>
-					<p>
-						Instant Articles has a lot of complex layout options, we've simplified them. You can set global defaults then override them on each article, should you wish.
-					</p>
+			</div>
+			<div class="fl w-100 w-third-ns pa2">
+				<div class="">
+					<h5 class="f3 fw5 lh-title">Options Galore</h5>
+					<p class="f4-5 lh-copy">Instant Articles has a lot of complex layout options, we've simplified them. You can set global defaults then override them on each article, should you wish.</p>
 				</div>
 			</div>
 		</div>
+
 	</section>
 
-	<section class="features features-4">
-		<div class="container">
-			<div class="row v-align-children">
-				<div class="col-sm-6 text-center feature">
-					<img alt="WordPress Facebook Instant Articles API Status" src="<?php echo get_template_directory_uri(); ?>/assets/img/wordpress-facebook-instant-articles-api-stats.png">
-				</div>
+	<section class="w-80 center pv3 tl">
+		<h2 class="f2 fw6 lh-title">Feature RICH</h2>
+		<h4 class="f4 fw3 lh-subtitle">a sub heading</h4>
 
-				<div class="col-sm-6 col-md-5 col-md-offset-1 feature">
-					<h4>Real Time Analytics.</h4>
-					<p>Live analytics straight from Facebook for each article + aggregated overview analytics for your entire site.</p>
+		<div class="pv4 bb b--black-10">
+			<div class="flex flex-column flex-row-ns">
+				<div class="w-100 w-50-ns pr3-ns order-2 order-1-ns">
+					<h4 class="f3 fw3 lh-subtitle">Real Time Analytics.</h4>
+					<p class="f4-5 lh-copy">Live analytics straight from Facebook for each article + aggregated overview analytics for your entire site.</p>
+				</div>
+				<div class="pl3-ns order-1 order-2-ns mb4 mb0-ns w-100 w-50-ns">
+					<img alt="WordPress Facebook Instant Articles API Status" src="<?php echo get_template_directory_uri(); ?>/assets/_img/wordpress-facebook-instant-articles-api-stats.png">
 				</div>
 			</div>
 		</div>
-	</section>
 
-	<section class="features features-5">
-		<div class="container">
-			<div class="row v-align-children">
-
-				<div class="col-sm-6 col-md-5 feature text-right">
-					<h4>Live Import Status.</h4>
-					<p>When a post is published or updated the Instant Article status is retrieved live from Facebook and displayed in the Admin. Any errors with the article can be seen immediately.</p>
+		<div class="pv4 bb b--black-10">
+			<div class="flex flex-column flex-row-ns">
+				<div class="w-100 w-50-ns pr3-ns order-2 order-1-ns">
+					<h4 class="f3 fw3 lh-subtitle">Live Import Status.</h4>
+					<p class="f4-5 lh-copy">When a post is published or updated the Instant Article status is retrieved live from Facebook and displayed in the Admin. Any errors with the article can be seen immediately.</p>
 				</div>
-
-				<div class="col-sm-6 col-md-offset-1 text-center feature">
-					<img alt="WordPress Facebook Instant Articles Import Status" src="<?php echo get_template_directory_uri(); ?>/assets/img/wordpress-facebook-instant-articles-import-status.png">
-				</div>
-
-			</div>
-		</div>
-	</section>
-
-	<section class="features features-4">
-		<div class="container">
-			<div class="row v-align-children">
-				<div class="col-sm-6 text-center feature">
-					<img alt="WordPress Facebook Instant Articles Code Example" src="<?php echo get_template_directory_uri(); ?>/assets/img/wordpress-facebook-instant-articles-comments-filters.png">
-				</div>
-
-				<div class="col-sm-6 col-md-5 col-md-offset-1 feature">
-					<h4>Readable Code.</h4>
-					<p>
-						Coded to WordPress standards, fully commented and contains as many filters and actions as we could possibly fit. The full documentation can be found at <a href="http://docs.wp-native-articles.com">docs.wp-native-articles.com</a>.
-					</p>
+				<div class="pl3-ns order-1 order-2-ns mb4 mb0-ns w-100 w-50-ns">
+					<img alt="WordPress Facebook Instant Articles Import Status" src="<?php echo get_template_directory_uri(); ?>/assets/_img/wordpress-facebook-instant-articles-import-status.png">
 				</div>
 			</div>
 		</div>
-	</section>
 
-	<section class="features features-6">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12 text-center">
-					<h3>Features</h3>
+		<div class="pv4">
+			<div class="flex flex-column flex-row-ns">
+				<div class="w-100 w-50-ns pr3-ns order-2 order-1-ns">
+					<h4 class="f3 fw3 lh-subtitle">Readable Code.</h4>
+					<p class="f4-5 lh-copy">Coded to WordPress standards, fully commented and contains as many filters and actions as we could possibly fit. The full documentation can be found at <a class="light-pink" href="http://docs.wp-native-articles.com">docs.wp-native-articles.com</a>.</p>
+				</div>
+				<div class="pl3-ns order-1 order-2-ns mb4 mb0-ns w-100 w-50-ns">
+					<img alt="WordPress Facebook Instant Articles Code Example" src="<?php echo get_template_directory_uri(); ?>/assets/_img/wordpress-facebook-instant-articles-comments-filters.png">
 				</div>
 			</div>
+		</div>
 
-			<div class="row">
-				<div class="col-md-3 col-sm-6 text-center feature">
+	</section>
+
+
+	<section class="w-80 center pv4">
+
+		<div class="cf ph0-ns">
+			<div class="fl w-100 w-25-ns pa2">
+				<div class="outline pv4 tc">
 					<i class="icon-browser-streamline-window"></i>
 					<h5>Global &amp; Article Settings</h5>
 				</div>
-
-				<div class="col-md-3 col-sm-6 text-center feature">
+			</div>
+			<div class="fl w-100 w-25-ns pa2 tc">
+				<div class="outline pv4">
 					<i class="icon-arrow-streamline-target"></i>
 					<h5>Ad Enabled</h5>
 				</div>
-
-				<div class="col-md-3 col-sm-6 text-center feature">
+			</div>
+			<div class="fl w-100 w-25-ns pa2 tc">
+				<div class="outline pv4">
 					<i class="icon-book-dowload-streamline"></i>
 					<h5>Full Documentation</h5>
 				</div>
-
-				<div class="col-md-3 col-sm-6 text-center feature">
+			</div>
+			<div class="fl w-100 w-25-ns pa2 tc">
+				<div class="outline pv4">
 					<i class="icon-bubble-love-streamline-talk"></i>
 					<h5>Analytics</h5>
 				</div>
+			</div>
+		</div>
 
-				<div class="col-md-3 col-sm-6 text-center feature">
+		<div class="cf ph0-ns">
+			<div class="fl w-100 w-25-ns pa2 tc">
+				<div class="outline pv4">
 					<i class="icon-design-pencil-rule-streamline"></i>
 					<h5>Sponsored Articles</h5>
 				</div>
-
-				<div class="col-md-3 col-sm-6 text-center feature">
+			</div>
+			<div class="fl w-100 w-25-ns pa2 tc">
+				<div class="outline pv4">
 					<i class="icon-frame-picture-streamline"></i>
 					<h5>Auto Updates</h5>
 				</div>
-
-				<div class="col-md-3 col-sm-6 text-center feature">
+			</div>
+			<div class="fl w-100 w-25-ns pa2 tc">
+				<div class="outline pv4">
 					<i class="icon-map-streamline-user"></i>
 					<h5>Quick Support Times</h5>
 				</div>
-
-				<div class="col-md-3 col-sm-6 text-center feature">
+			</div>
+			<div class="fl w-100 w-25-ns pa2 tc">
+				<div class="outline pv4">
 					<i class="icon-paint-bucket-streamline"></i>
 					<h5>Easy Customisation</h5>
 				</div>
-
 			</div>
 		</div>
+
 	</section>
 
+
+	<section class="bg-light-gray pv3">
+
+		<div class="w-80 center">
+
+			<a name="faqs"></a>
+
+			<h3 class="f1 fw3 lh-title mv0 pv0">FAQs</h3>
+
+			<div class="center">
+				<div class="cf">
+					<div class="fl w-100 w-50-ns pr0 pr2-ns">
+						<div class="">
+							<h5 class="lh-title f4">How do I get updates?</h5>
+							<p class="lh-copy f4-5">Updates happen through the WordPress admin in the same way as other plugins. If you've got a valid licence key then updates are free of charge.</p>
+						</div>
+					</div>
+					<div class="fl w-100 w-50-ns pl0 pl2-ns">
+						<div class="">
+							<h5 class="lh-title f4">Is it Multisite compatible?</h5>
+							<p class="lh-copy f4-5">Yes. Multisite installs only require a single licence to get updates. There are also tools in the network panel for setting default site options and resetting options.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="center">
+				<div class="cf">
+					<div class="fl w-100 w-50-ns pr0 pr2-ns">
+						<div class="">
+							<h5 class="lh-title f4">Can I cancel my subscription?</h5>
+							<p class="lh-copy f4-5">Yes. You can cancel your subscription at anytime from your account page. You'll continue to receive updates until your licence expires, one year after purchase.</p>
+						</div>
+					</div>
+					<div class="fl w-100 w-50-ns pl0 pl2-ns">
+						<div class="">
+							<h5 class="lh-title f4">Why do I have to renew my subscription?</h5>
+							<p class="lh-copy f4-5">You need a valid licence in order to continue receiving updates and new features. All licences are valid for 1 year after purchase. Licence renewals get an automatic 25% discount.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="center">
+				<div class="cf">
+					<div class="fl w-100 w-50-ns pr0 pr2-ns">
+						<div class="">
+							<h5 class="lh-title f4">What's the refund policy?</h5>
+							<p class="lh-copy f4-5">We stand by our product and customer satisfaction is our top priority, but if for any reason you're unhappy we will provide a full refund within 30 days of purchase.</p>
+						</div>
+					</div>
+					<div class="fl w-100 w-50-ns pl0 pl2-ns">
+						<div class="">
+							<h5 class="lh-title f4">How do I get support?</h5>
+							<p class="lh-copy f4-5">Full documentation, tutorials and knowledge base is available at docs.wp-native-articles.com. Alternatively you can contact us directly on your account page <a class="light-pink" href="https://wp-native-articles.com/account/">here</a>.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="center">
+				<div class="cf">
+					<div class="fl w-100 w-50-ns pr0 pr2-ns">
+						<div class="">
+							<h5 class="lh-title f4">I have a pre-sales question</h5>
+							<p class="lh-copy f4-5">We're happy to answer any pre-sales questions. Please get in touch by emailing hello@wp-native-articles.com.</p>
+						</div>
+					</div>
+					<div class="fl w-100 w-50-ns pl0 pl2-ns">
+						<div class="">
+							<h5 class="lh-title f4"></h5>
+							<p class="lh-copy f4-5"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</section>
+
+
+<!--
 	<section class="pricing pricing-1">
 
 		<a name="pricing"></a>
@@ -249,93 +330,7 @@ get_header(); ?>
 		</div>
 	</section>
 
-	<section class="faq faq-1">
+-->
 
-		<a name="faqs"></a>
-
-		<div class="container">
-
-			<div class="row">
-				<div class="col-sm-12 text-center" style="margin-bottom: 30px;">
-					<h3>FAQs</h3>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-sm-6">
-					<div class="faq">
-						<h5>How do I get updates?</h5>
-						<p>Updates happen through the WordPress admin in the same way as other plugins. If you've got a valid licence key then updates are free of charge.</p>
-					</div>
-
-					<div class="faq">
-						<h5>Is it Multisite compatible?</h5>
-						<p>Yes. Multisite installs only require a single licence to get updates. There are also tools in the network panel for setting default site options and resetting options.</p>
-					</div>
-
-					<div class="faq">
-						<h5>Can I cancel my subscription?</h5>
-						<p>Yes. You can cancel your subscription at anytime from your account page. You'll continue to receive updates until your licence expires, one year after purchase.</p>
-					</div><div class="faq">
-						<h5>Why do I have to renew my subscription?</h5>
-						<p>You need a valid licence in order to continue receiving updates and new features. All licences are valid for 1 year after purchase. Licence renewals get an automatic 25% discount.</p>
-					</div>
-				</div>
-
-				<div class="col-sm-6">
-					<div class="faq">
-						<h5>What's the refund policy?</h5>
-						<p>We stand by our product and customer satisfaction is our top priority, but if for any reason you're unhappy we will provide a full refund within 30 days of purchase.</p>
-					</div>
-
-					<div class="faq">
-						<h5>How do I get support?</h5>
-						<p>Full documentation, tutorials and knowledge base is available at docs.wp-native-articles.com. Alternatively you can contact us directly on your account page <a href="https://wp-native-articles.com/account/">here</a>.</p>
-					</div><div class="faq">
-						<h5>I have a pre-sales question</h5>
-						<p>We're happy to answer any pre-sales questions. Please get in touch by emailing support@wp-native-articles.com.</p>
-					</div>
-				</div>
-
-			</div>
-
-		</div>
-	</section> -->
-<?php if ( 1 ==2 ) :?>
-	<section class="cta cta-2">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12 text-center">
-					<h3>Stay up-to-date</h3>
-					<h5>We send out occasional newsletters when we have exciting news to share.</h5>
-					<!-- Begin MailChimp Signup Form -->
-					<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
-					<style type="text/css">
-						#mc_embed_signup { max-width: 800px; margin: 0 auto; }
-						#mc_embed_signup form { text-align: center; }
-						#mc_embed_signup input.email, #mc_embed_signup input.button { display: inline-block; }
-						#mc_embed_signup .clear { display: block; }
-					</style>
-					<div id="mc_embed_signup">
-						<form action="//wpartisan.us13.list-manage.com/subscribe/post?u=6d140baaa56a04a1d2f126872&amp;id=6047071390" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate contained-form form-email" target="_blank" novalidate>
-							<div id="mc_embed_signup_scroll">
-
-								<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-								<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-								<div style="position: absolute; left: -5000px;" aria-hidden="true">
-									<input type="text" name="b_6d140baaa56a04a1d2f126872_6047071390" tabindex="-1" value="">
-								</div>
-								<div class="clear">
-									<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-								</div>
-							</div>
-						</form>
-					</div>
-					<!--End mc_embed_signup-->
-				</div>
-			</div>
-		</div>
-	</section>
-<?php endif;?>
 
 <?php get_footer(); ?>
