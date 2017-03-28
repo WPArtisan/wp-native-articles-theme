@@ -203,13 +203,13 @@ foreach ( $handles as $h )
 	 */
 	public function format_content( $content ) {
 		$replace = array(
-			'<blockquote><p>' => '<blockquote class="ml0 mt0 pl4 black-90 bl bw2 b--wpna-blue"><p class="f4 f3-l lh-copy mt0">',
+			'<blockquote><p>' => '<blockquote class="ml0 mt0 pl4 black-90 bl bw2 b--light-blue"><p class="f4 f3-l lh-copy mt0">',
 			'<ul>' => '<ul class="list ph3 ph3-ns pv1">',
 			'<ol>' => '<ol class="list ph3 ph3-ns pv1">',
 			'<li>' => '<li class="mr2 pv2">',
-			'<p>'  => '<p class="lh-copy mb4">',
-			'<h3>' => '<h3 class="f2 f1-m fw2 lh-title mv0">',
-			'<a'  => '<a class="wpna-blue"',
+			'<p>'  => '<p class="mb4">',
+			'<h3>' => '<h3 class="f2 f1-m lh-title mv0">',
+			'<a'  => '<a class="light-blue"',
 		);
 
 		return str_ireplace( array_keys( $replace ), array_values( $replace ), $content );

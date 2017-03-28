@@ -38,10 +38,10 @@ if ( is_user_logged_in() ):
 						<?php if( $payment->status != 'publish' ) : ?>
 							<span class="edd_purchase_status <?php echo $payment->status; ?>"><?php echo $payment->status_nicename; ?></span>
 							<?php if ( $payment->is_recoverable() ) : ?>
-								&mdash; <a class="link underline-hover wpna-blue" href="<?php echo $payment->get_recovery_url(); ?>"><?php _e( 'Complete Purchase', 'easy-digital-downloads' ); ?></a>
+								&mdash; <a class="link underline-hover light-blue" href="<?php echo $payment->get_recovery_url(); ?>"><?php _e( 'Complete Purchase', 'easy-digital-downloads' ); ?></a>
 							<?php endif; ?>
 						<?php else: ?>
-							<a class="link underline-hover wpna-blue" href="<?php echo esc_url( add_query_arg( 'payment_key', $payment->key, edd_get_success_page_uri() ) ); ?>"><?php _e( 'View Details and Downloads', 'easy-digital-downloads' ); ?></a>
+							<a class="link underline-hover light-blue" href="<?php echo esc_url( add_query_arg( 'payment_key', $payment->key, edd_get_success_page_uri() ) ); ?>"><?php _e( 'View Details and Downloads', 'easy-digital-downloads' ); ?></a>
 						<?php endif; ?>
 					</td>
 					<?php do_action( 'edd_purchase_history_row_end', $payment->ID, $payment->payment_meta ); ?>

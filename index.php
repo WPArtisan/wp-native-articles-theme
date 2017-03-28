@@ -13,9 +13,9 @@
 						<p class="f4-5 lh-copy"><?php echo get_the_excerpt(); ?></p>
 					</div>
 					<?php if ( has_post_thumbnail() ) : ?>
-						<div class="pl3-ns order-1 order-2-ns mb4 mb0-ns w-100 w-40-ns">
+						<div class="pl3-ns order-1 order-2-ns mb4 mb0-ns w-100 w-40-ns v-mid">
 							<a href="<?php the_permalink(); ?>">
-								<img class="db" src="<?php echo get_the_post_thumbnail_url(); ?>" />
+								<img class="db" src="<?php echo esc_url( get_the_post_thumbnail_url() ); ?>" />
 							</a>
 						</div>
 					<?php endif; ?>

@@ -69,18 +69,18 @@ if ( is_user_logged_in() ):
 						<span class="edd_subscriptiontimes_billed"><?php echo $subscription->get_times_billed() . ' / ' . ( ( $subscription->bill_times == 0 ) ? __( 'Until cancelled', 'edd-recurring' ) : $subscription->bill_times ); ?></span>
 					</td>
 					<td class="pa3 bb b--light-gray">
-						<a href="<?php echo esc_url( add_query_arg( 'payment_key', edd_get_payment_key( $subscription->parent_payment_id ), edd_get_success_page_uri() ) ); ?>" class="edd_subscription_invoice link underline-hover wpna-blue"><?php _e( 'View Invoice', 'edd-recurring' ); ?></a>
+						<a href="<?php echo esc_url( add_query_arg( 'payment_key', edd_get_payment_key( $subscription->parent_payment_id ), edd_get_success_page_uri() ) ); ?>" class="edd_subscription_invoice link underline-hover light-blue"><?php _e( 'View Invoice', 'edd-recurring' ); ?></a>
 						<?php if( $subscription->can_update() ) : ?>
 							&nbsp;|&nbsp;
-							<a class="link underline-hover wpna-blue" href="<?php echo esc_url( $subscription->get_update_url() ); ?>"><?php _e( 'Update Payment Method', 'edd-recurring' ); ?></a>
+							<a class="link underline-hover light-blue" href="<?php echo esc_url( $subscription->get_update_url() ); ?>"><?php _e( 'Update Payment Method', 'edd-recurring' ); ?></a>
 						<?php endif; ?>
 						<?php if( $subscription->can_renew() ) : ?>
 							&nbsp;|&nbsp;
-							<a class="link underline-hover wpna-blue"  href="<?php echo esc_url( $subscription->get_renew_url() ); ?>" class="edd_subscription_renew"><?php _e( 'Renew', 'edd-recurring' ); ?></a>
+							<a class="link underline-hover light-blue"  href="<?php echo esc_url( $subscription->get_renew_url() ); ?>" class="edd_subscription_renew"><?php _e( 'Renew', 'edd-recurring' ); ?></a>
 						<?php endif; ?>
 						<?php if( $subscription->can_cancel() ) : ?>
 							&nbsp;|&nbsp;
-							<a class="link underline-hover wpna-blue"  href="<?php echo esc_url( $subscription->get_cancel_url() ); ?>" class="edd_subscription_cancel"><?php _e( 'Cancel', 'edd-recurring' ); ?></a>
+							<a class="link underline-hover light-blue"  href="<?php echo esc_url( $subscription->get_cancel_url() ); ?>" class="edd_subscription_cancel"><?php _e( 'Cancel', 'edd-recurring' ); ?></a>
 						<?php endif; ?>
 					</td>
 					<?php do_action( 'edd_recurring_history_row_end', $subscription ); ?>

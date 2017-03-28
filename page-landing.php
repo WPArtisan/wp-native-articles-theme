@@ -5,7 +5,16 @@
 
 get_header(); ?>
 
-	<section class="header header-11 overlay">
+	<section class="w-100 pa4 bg-light-blue">
+
+		<h1 class="white tc f1 fw6 lh-heading" style="text-shadow: 3px 3px rgba( 0, 0, 0, 0.1 );"><b>WordPress</b> Native Articles</h1>
+		<h5 class="white tc f3 fw3 lh-heading">THE Premium WordPress Plugin for Facebook Instant Articles</h5>
+
+	</section>
+
+
+
+	<!-- <section class="header header-11 overlay">
 
 		<div class="background-image-holder">
 			<img alt="Background Image" class="background-image" src="<?php echo get_template_directory_uri(); ?>/assets/img/hero14.jpg">
@@ -291,8 +300,8 @@ get_header(); ?>
 			</div>
 
 		</div>
-	</section>
-
+	</section> -->
+<?php if ( 1 ==2 ) :?>
 	<section class="cta cta-2">
 		<div class="container">
 			<div class="row">
@@ -327,5 +336,6 @@ get_header(); ?>
 			</div>
 		</div>
 	</section>
+<?php endif;?>
 
 <?php get_footer(); ?>

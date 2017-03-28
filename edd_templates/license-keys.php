@@ -82,7 +82,7 @@ if ( is_user_logged_in() ) :
 						<span class="edd_sl_limit_sep">&nbsp;/&nbsp;</span>
 						<span class="edd_sl_limit_max"><?php echo edd_software_licensing()->license_limit( $license->ID ); ?></span>
 						<?php if( ! edd_software_licensing()->force_increase() && 'expired' !== edd_software_licensing()->get_license_status( $license->ID ) && get_post_status( $license->ID ) !== 'draft' ) : ?>
-							<br/><a class="link wpna-blue" href="<?php echo esc_url( add_query_arg( array( 'license_id' => $license->ID, 'action' => 'manage_licenses', 'payment_id' => $payment_id ), get_permalink( edd_get_option( 'purchase_history_page' ) ) ) ); ?>"><?php _e( 'Manage Sites', 'edd_sl' ); ?></a>
+							<br/><a class="link light-blue" href="<?php echo esc_url( add_query_arg( array( 'license_id' => $license->ID, 'action' => 'manage_licenses', 'payment_id' => $payment_id ), get_permalink( edd_get_option( 'purchase_history_page' ) ) ) ); ?>"><?php _e( 'Manage Sites', 'edd_sl' ); ?></a>
 						<?php elseif ( 'expired' === edd_software_licensing()->get_license_status( $license->ID ) ) : ?>
 							<br/><span class="edd_sl_no_management"><?php _e( 'Renew to manage sites', 'edd_sl' ); ?></span>
 						<?php else : ?>
@@ -90,7 +90,7 @@ if ( is_user_logged_in() ) :
 						<?php endif; ?>
 						<?php if( edd_sl_license_has_upgrades( $license->ID ) && 'expired' !== edd_software_licensing()->get_license_status( $license->ID ) ) : ?>
 							<span class="edd_sl_limit_sep">&nbsp;&ndash;&nbsp;</span>
-							<a class="link wpna-blue" href="<?php echo esc_url( add_query_arg( array( 'view' => 'upgrades', 'license_id' => $license->ID, 'action' => 'manage_licenses', 'payment_id' => $payment_id ), get_permalink( edd_get_option( 'purchase_history_page' ) ) ) ); ?>"><?php _e( 'View Upgrades', 'edd_sl' ); ?></a>
+							<a class="link light-blue" href="<?php echo esc_url( add_query_arg( array( 'view' => 'upgrades', 'license_id' => $license->ID, 'action' => 'manage_licenses', 'payment_id' => $payment_id ), get_permalink( edd_get_option( 'purchase_history_page' ) ) ) ); ?>"><?php _e( 'View Upgrades', 'edd_sl' ); ?></a>
 						<?php elseif ( edd_sl_license_has_upgrades( $license->ID ) && 'expired' == edd_software_licensing()->get_license_status( $license->ID ) ) : ?>
 							<span class="edd_sl_limit_sep">&nbsp;&ndash;&nbsp;</span>
 							<span class="edd_sl_no_upgrades"><?php _e( 'Renew to upgrade', 'edd_sl' ); ?></span>
@@ -98,14 +98,14 @@ if ( is_user_logged_in() ) :
 						<?php if( edd_sl_renewals_allowed() ) : ?>
 							<?php if( 'expired' === edd_software_licensing()->get_license_status( $license->ID ) && edd_software_licensing()->can_renew( $license->ID ) ) : ?>
 								<span class="edd_sl_key_sep">&nbsp;&ndash;&nbsp;</span>
-								<a class="link wpna-blue" href="<?php echo edd_software_licensing()->get_renewal_url( $license->ID ); ?>" title="<?php esc_attr_e( 'Renew license', 'edd_sl' ); ?>"><?php _e( 'Renew license', 'edd_sl' ); ?></a>
+								<a class="link light-blue" href="<?php echo edd_software_licensing()->get_renewal_url( $license->ID ); ?>" title="<?php esc_attr_e( 'Renew license', 'edd_sl' ); ?>"><?php _e( 'Renew license', 'edd_sl' ); ?></a>
 							<?php elseif( ! edd_software_licensing()->is_lifetime_license( $license->ID ) && edd_software_licensing()->can_extend( $license->ID ) ) : ?>
 								<span class="edd_sl_key_sep">&nbsp;&ndash;&nbsp;</span>
-								<a class="link wpna-blue" href="<?php echo edd_software_licensing()->get_renewal_url( $license->ID ); ?>" title="<?php esc_attr_e( 'Extend license', 'edd_sl' ); ?>"><?php _e( 'Extend license', 'edd_sl' ); ?></a>
+								<a class="link light-blue" href="<?php echo edd_software_licensing()->get_renewal_url( $license->ID ); ?>" title="<?php esc_attr_e( 'Extend license', 'edd_sl' ); ?>"><?php _e( 'Extend license', 'edd_sl' ); ?></a>
 							<?php endif; ?>
 						<?php endif; ?>
 						<br/>
-						<a class="link wpna-blue edd_sl_purchase_number" href="<?php echo esc_url( edd_get_success_page_uri( '?payment_key=' . edd_get_payment_key( $payment_id ) ) ); ?>" title="<?php esc_attr_e( 'View Purchase Record', 'edd_sl' ); ?>"><?php printf( __( 'Purchase #%d', 'edd_sl' ), edd_get_payment_number( $payment_id ) ); ?></a>
+						<a class="link light-blue edd_sl_purchase_number" href="<?php echo esc_url( edd_get_success_page_uri( '?payment_key=' . edd_get_payment_key( $payment_id ) ) ); ?>" title="<?php esc_attr_e( 'View Purchase Record', 'edd_sl' ); ?>"><?php printf( __( 'Purchase #%d', 'edd_sl' ), edd_get_payment_number( $payment_id ) ); ?></a>
 						<?php do_action( 'edd_sl_license_key_details', $license->ID ); ?>
 					</td>
 
@@ -118,7 +118,7 @@ if ( is_user_logged_in() ) :
 		<?php else: ?>
 
 			<tr class="edd_sl_license_row pa3 bb b--light-gray">
-				<td class="pv3 pr3 bb b--black-20" colspan="2"><?php _e( 'You currently have no licenses', 'edd_sl' ); ?></td>
+				<td class="pa3" colspan="2"><?php _e( 'You currently have no licenses', 'edd_sl' ); ?></td>
 			</tr>
 		<?php endif; ?>
 		</tbody>

@@ -42,7 +42,7 @@ function wpnat_edd_sl_site_management_links( $payment_id, $purchase_data ) {
 		$manage_licenses_url = esc_url( add_query_arg( array( 'action' => 'manage_licenses', 'payment_id' => $payment_id ) ) );
 		echo '<td class="edd_license_key pa3 bb b--light-gray">';
 			if( edd_is_payment_complete( $payment_id ) && $licensing->get_licenses_of_purchase( $payment_id ) ) {
-				echo '<a class="link underline-hover wpna-blue" href="' . esc_url( $manage_licenses_url ) . '">' . __( 'View Licenses', 'edd_sl' ) . '</a>';
+				echo '<a class="link underline-hover light-blue" href="' . esc_url( $manage_licenses_url ) . '">' . __( 'View Licenses', 'edd_sl' ) . '</a>';
 			} else {
 				echo '-';
 			}
@@ -103,10 +103,10 @@ function wpnat_img_caption_shortcode( $output, $attr, $content ) {
 
 	if ( $html5 ) {
 		$html = '<figure ' . $atts['id'] . $style . 'class="' . esc_attr( $class ) . '">'
-		. do_shortcode( $content ) . '<figcaption class="wp-caption-text">' . $atts['caption'] . '</figcaption></figure>';
+		. do_shortcode( $content ) . '<figcaption class="tc fw4 f6 i wp-caption-text">' . $atts['caption'] . '</figcaption></figure>';
 	} else {
 		$html = '<div ' . $atts['id'] . $style . 'class="' . esc_attr( $class ) . '">'
-		. do_shortcode( $content ) . '<p class="wp-caption-text">' . $atts['caption'] . '</p></div>';
+		. do_shortcode( $content ) . '<p class="tc fw4 f6 i wp-caption-text">' . $atts['caption'] . '</p></div>';
 	}
 
 	return $html;

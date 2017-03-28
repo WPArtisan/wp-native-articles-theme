@@ -65,7 +65,7 @@ if ( $purchases ) :
 											?>
 
 											<div class="edd_download_file">
-												<a href="<?php echo esc_url( $download_url ); ?>" class="edd_download_file_link link underline-hover wpna-blue">
+												<a href="<?php echo esc_url( $download_url ); ?>" class="edd_download_file_link link underline-hover light-blue">
 													<?php echo edd_get_file_name( $file ); ?>
 												</a>
 											</div>
@@ -113,5 +113,5 @@ if ( $purchases ) :
 	</div>
 	<?php do_action( 'edd_after_download_history' ); ?>
 <?php else : ?>
-	<p class="edd-no-downloads"><?php _e( 'You have not purchased any downloads', 'easy-digital-downloads' ); ?></p>
+	<p class="edd-no-downloads mt4 f2 i"><?php _e( 'You have not purchased any downloads', 'easy-digital-downloads' ); ?></p>
 <?php endif; ?>
